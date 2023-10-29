@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buss</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="border-b-2 p-5 mb-6">
+      <img class="w-72" src="https://static.clickbus.com/live/ClickBus/new-logo-clickbus-horizontal.svg"
+        alt="icon do logo da pag">
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="flex">
+        <ul class=" flex flex-col  ">
+          <li id="1" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-8 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            01
+          </li>
+          <li id="5" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            05
+          </li>
+          <li id="9" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            09
+          </li>
+          <li id="13" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            13
+          </li>
+          <li id="17" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            17
+          </li>
+          <li id="21" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            21
+          </li>
+          <li id="25" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            25
+          </li>
+          <li id="29" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-20 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            29
+          </li>
+        </ul>
+        <ul class=" flex flex-col ">
+          <li id="2" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-8 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            02
+          </li>
+          <li id="6" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            06
+          </li>
+          <li id="10" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            10
+          </li>
+          <li id="14" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            14
+          </li>
+          <li id="18" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            18
+          </li>
+          <li id="22" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            22
+          </li>
+          <li id="26" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            26
+          </li>
+          <li id="30" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            30
+          </li>
+        </ul>
+        <ul class=" flex flex-col ">
+          <li id="3" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-8 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            03
+          </li>
+          <li id="7" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            07
+          </li>
+          <li id="11" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            11
+          </li>
+          <li id="15" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            15
+          </li>
+          <li id="19" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            19
+          </li>
+          <li id="23" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            23
+          </li>
+          <li id="27" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            27
+          </li>
+          <li id="31" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-6 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            31
+          </li>
+        </ul>
+        <ul class="flex flex-col ">
+          <li id="4" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-8 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            04
+          </li>
+          <li id="8" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            08
+          </li>
+          <li id="12" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            12
+          </li>
+          <li id="16" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            16
+          </li>
+          <li id="20" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            20
+          </li>
+          <li id="24" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            24
+          </li>
+          <li id="28" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            28
+          </li>
+          <li id="32" onclick="selecionarCadeira(this)"
+            class="bg-purple-700 w-8 text-center ml-2 mt-1 h-8 pt-2 rounded-t-lg font-bold hover:scale-105 cursor-pointer">
+            32
+          </li>
+        </ul>
+
+        <div class="flex flex-col p-3 ml-40 mt-5 ">
+          <p class="text-base	">Valor total das passagens</p>
+          <p id="valor-total-compra" class="font-semibold	text-lg	"> R$ 0 </p>
+          <p id="valor-pago" class="mt-20 font-bold">Valor pago: R$</p>
+        </div>
+      </div>
+    </section>
+    <div class="p-4 ml-20 ">
+      <button id="finalizar-compra" onclick="finalizarCompra()"
+        class="bg-purple-700 hover:bg-purple-600 p-3 rounded-md">Finalizar compra</button>
+    </div>
+  </main>
+  <script src="/main.js"></script>
+</body>
+
+</html>
