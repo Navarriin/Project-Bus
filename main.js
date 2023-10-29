@@ -6,14 +6,20 @@ let assentosSelecionados = [];
 
 function selecionarCadeira(cadeira) {
   const cadeiraSelecionada = cadeira;
+  if (assentosSelecionados.length === 0) {
+    valorPago();
+  }
 
   if (cadeiraSelecionada.classList.contains("selecionado")) {
     cadeiraSelecionada.classList.remove("selecionado");
     assentosSelecionados = assentosSelecionados.filter(
       (id) => id !== cadeiraSelecionada.id
     );
-
     somaValorPassagens();
+    return;
+  }
+
+  if (cadeiraSelecionada.classList.contains("ocupado")) {
     return;
   }
 
@@ -23,9 +29,9 @@ function selecionarCadeira(cadeira) {
 }
 
 function finalizarCompra() {
-  for (i in assentosSelecionados) {
+  for (const id in assentosSelecionados) {
     const selecionados = document.querySelector(".selecionado");
-    selecionados.classList.remove("selecionado");
+    selecionados.classList.remove("selecionado", "hover:scale-105");
     selecionados.classList.add("ocupado");
   }
 
