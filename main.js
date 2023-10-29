@@ -6,6 +6,11 @@ let assentosSelecionados = [];
 
 function selecionarCadeira(cadeira) {
   const cadeiraSelecionada = cadeira;
+
+  if (cadeiraSelecionada.classList.contains("ocupado")) {
+    return;
+  }
+
   if (assentosSelecionados.length === 0) {
     valorPago();
   }
@@ -16,10 +21,6 @@ function selecionarCadeira(cadeira) {
       (id) => id !== cadeiraSelecionada.id
     );
     somaValorPassagens();
-    return;
-  }
-
-  if (cadeiraSelecionada.classList.contains("ocupado")) {
     return;
   }
 
