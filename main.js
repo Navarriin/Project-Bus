@@ -1,57 +1,43 @@
-const elementoPrecoTotalCompra = document.getElementById("valor-total-compra");
-const valorTotalPago = document.getElementById("valor-pago");
-const valorUnicaPassagem = 52;
+const valorTotalDaCompra = document.getElementById("valor-total-compra");
+const mensagemErro = document.getElementById("mensagem-erro");
+const valorPago = document.getElementById("valor-pago");
+const valorPassagem = 55;
 let valorTotalPassagens = 0;
-let assentosSelecionados = [];
+let passagensCompradas = [];
 
 function selecionarCadeira(cadeira) {
-  const cadeiraSelecionada = cadeira;
+  let assentoSelecionado = cadeira;
 
-  if (cadeiraSelecionada.classList.contains("ocupado")) {
-    return;
-  }
-
-  if (assentosSelecionados.length === 0) {
-    valorPago();
-  }
-
-  if (cadeiraSelecionada.classList.contains("selecionado")) {
-    cadeiraSelecionada.classList.remove("selecionado");
-    assentosSelecionados = assentosSelecionados.filter(
-      (id) => id !== cadeiraSelecionada.id
+  if (assentoSelecionado.classList.contains("ocupado")) {
+    mensagemErro.innerHTML = "ERRO: Assento já ocupado!!";
+  } else if (assentoSelecionado.classList.contains("selecionado")) {
+    assentoSelecionado.classList.remove("selecionado");
+    passagensCompradas = passagensCompradas.filter(
+      (id) => id !== assentoSelecionado.id
     );
-    somaValorPassagens();
-    return;
+    somaValorPassagem();
+    mensagemErro.innerHTML = "";
+  } else {
+    assentoSelecionado.classList.add("selecionado");
+    passagensCompradas.push(assentoSelecionado.id);
+    somaValorPassagem();
+    valorPago.innerHTML = "Valor pago: R$ 0,00";
+    mensagemErro.innerHTML = "";
   }
-
-  cadeiraSelecionada.classList.add("selecionado");
-  assentosSelecionados.push(cadeiraSelecionada.id);
-  somaValorPassagens();
 }
 
 function finalizarCompra() {
-  for (const id in assentosSelecionados) {
+  for (id in passagensCompradas) {
     const selecionados = document.querySelector(".selecionado");
-    selecionados.classList.remove("selecionado", "hover:scale-105");
+    selecionados.classList.remove("selecionado");
     selecionados.classList.add("ocupado");
   }
-
-  valorPago();
-  assentosSelecionados = [];
-  somaValorPassagens();
+  valorPago.innerHTML = `Valor pago: R$ ${valorTotalPassagens},00`;
+  passagensCompradas = [];
+  somaValorPassagem();
 }
 
-function somaValorPassagens() {
-  valorTotalPassagens = assentosSelecionados.length * valorUnicaPassagem;
-  atualizarVizualizacaoPreco();
-}
-
-function atualizarVizualizacaoPreco() {
-  elementoPrecoTotalCompra.innerHTML = `R$ ${valorTotalPassagens},00`;
-}
-
-function valorPago() {
-  valorTotalPassagens = assentosSelecionados.length * valorUnicaPassagem;
-  const valorTotal = valorTotalPassagens;
-  valorTotalPago.innerHTML = `Valor pago: R$ ${valorTotal},00`;
+function somaValorPassagem() {
+  valorTotalPassagens = passagensCompradas.length * valorPassagem;
+  valorTotalDaCompra.innerHTML = `R$ ${valorTotalPassagens},00 `;
 }
