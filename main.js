@@ -1,15 +1,18 @@
 const valorTotalDaCompra = document.getElementById("valor-total-compra");
 const mensagemErro = document.getElementById("mensagem-erro");
 const valorPago = document.getElementById("valor-pago");
+const mensagemSucesso = document.getElementById("mensagem-sucesso");
 const valorPassagem = 55;
 let valorTotalPassagens = 0;
 let passagensCompradas = [];
 
 function selecionarCadeira(cadeira) {
-  let assentoSelecionado = cadeira;
+  const assentoSelecionado = cadeira;
+  mensagemSucesso.innerHTML = "";
 
   if (assentoSelecionado.classList.contains("ocupado")) {
     mensagemErro.innerHTML = "ERRO: Assento já ocupado!!";
+    valorPago.innerHTML = "Valor pago: R$ 0,00";
   } else if (assentoSelecionado.classList.contains("selecionado")) {
     assentoSelecionado.classList.remove("selecionado");
     passagensCompradas = passagensCompradas.filter(
@@ -29,9 +32,10 @@ function selecionarCadeira(cadeira) {
 function finalizarCompra() {
   for (id in passagensCompradas) {
     const selecionados = document.querySelector(".selecionado");
-    selecionados.classList.remove("selecionado");
+    selecionados.classList.remove("selecionado", "hover:scale-105");
     selecionados.classList.add("ocupado");
   }
+  mensagemSucesso.innerHTML = "Passagem comprada com sucesso!!";
   valorPago.innerHTML = `Valor pago: R$ ${valorTotalPassagens},00`;
   passagensCompradas = [];
   somaValorPassagem();
